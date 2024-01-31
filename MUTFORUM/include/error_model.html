@@ -1,0 +1,44 @@
+<style>
+    * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: Calibri;
+   }
+
+   .errorContainer {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       background: #FF9;
+   }
+   section{
+       height: 25px;
+       margin: 0.2rem;
+       border-top: 2px solid #000;
+       background: #FF9;
+   }
+   section:first-of-type {
+       background: #F00;
+       color: #FFF;
+   }
+   a{
+       background:#55E;
+       display: inline-block;
+       height: 40px;
+       border-radius: 10%;
+       padding: 5px;
+       color: #FFF;
+       text-decoration: none;
+       margin: 0 auto;
+   }
+   a:hover{
+    background:#88F;
+   }
+</style>
+<div class="errorContainer">
+   <section>Message [#errorString#]</section>
+   <section>Fichier [#errorFile#]</section>
+   <section><span>[#errorType#]</span>Ligne : <b>[#errorLine#]</b></section>
+</div>
+<a href="#" onclick="history.back()">Revenir en arriere</a>

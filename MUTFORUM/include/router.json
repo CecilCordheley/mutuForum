@@ -1,0 +1,104 @@
+{
+    "index.php": {
+        "view": ".\/sqlView\/index",
+        "template": "index.tpl",
+        "ctrl": "index.ctrl.php",
+        "async":"index.async.php",
+        "style": [
+            "index.css"
+        ]
+    },
+    "topic.php": {
+        "view": "sqlView\/topic",
+        "template": "topic.tpl",
+        "ctrl": "topic.ctrl.php",
+        "style": [
+            "topic.css"
+        ]
+    },
+    "message.php": {
+        "view": "sqlView\/message",
+        "template": "message.tpl",
+        "ctrl": "message.ctrl.php",
+        "style": [
+            "message.css",
+            "message.js"
+        ]
+    },
+    "last.html": {
+        "parent": "message.php",
+        "GET": [
+            {
+                "last": 1
+            }
+        ]
+    },
+    "sujet.php": {
+        "parent": "topic.php",
+        "GET": [
+            {
+                "id": 0
+            }
+        ]
+    },
+    "account.php": {
+        "template": "account.tpl",
+        "ctrl": "account.ctrl.php",
+        "style": [
+            "account.css"
+        ]
+    },
+    "login": {
+        "parent": "account.php",
+        "GET": [
+            {
+                "act": "login"
+            }
+        ]
+    },
+    "chat.php": {
+        "template": "chat.tpl",
+        "ctrl": "chat.ctrl.php",
+        "style": [
+            "chat.css"
+        ]
+    },
+    "ADMIN_message.php": {
+        "template": "ADMIN\/message.tpl",
+        "ctrl": "ADMIN_msg.ctrl.php",
+        "style": [
+            "adminStyle.css"
+        ]
+    },
+    "ADMIN_user.php": {
+        "template": "ADMIN\/user.tpl",
+        "ctrl": "ADMIN_user.ctrl.php",
+        "style": [
+            "adminStyle.css"
+        ]
+    },
+    "new_Password": {
+        "parent": "account.php",
+        "GET": [
+            {
+                "act": "updatePassword"
+            }
+        ]
+    },
+    "add_user.php": {
+        "parent": "ADMIN_user.php",
+        "template": "ADMIN\/addUser.tpl",
+        "GET": [
+            {
+                "act": "add"
+            }
+        ]
+    },
+    "ADMIN_mutuelle.php": {
+        "template": "ADMIN\/mutuelle.tpl",
+        "ctrl": "ADMIN_mutuelle.ctrl.php",
+        "style": [
+            "adminStyle.css"
+        ]
+    }
+}

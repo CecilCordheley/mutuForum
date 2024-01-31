@@ -1,0 +1,165 @@
+/*Règles CSS principales des pages du projet*/
+:root{
+     --bgColor:#559;
+     --colorLink:#999;
+     --hoverLink:#78A;
+}
+*{
+     margin:0;
+     padding:0;
+     box-sizing:border-box;
+     font-family: Arial;
+}
+a{
+     text-decoration: none;
+}
+.wrapper{
+     display: grid;
+     grid-template-areas: "header"
+     "mainContent"
+     "footer";
+     width: 100%;
+     height: auto;
+     margin: 0 auto;
+     background:#333
+}
+main h2{
+     color:#FF0;
+}
+header{
+     grid-area: header;
+}
+/*NavBar Section*/
+nav{
+     filter: drop-shadow(0px -0px 3px #AAA8);
+}
+.navbar{
+     background-color:#000;
+     color: #FFF;
+     border-radius: 100%/ 0  0  25px 25px;  
+}
+.nav-item a,a.navbar-brand{
+     color: #FFF;
+     background: linear-gradient(to top, #F006 0%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+     transition: background-size .7s,color .9s;
+}
+a.navbar-brand:hover{
+     color: #78A;
+     background-size: 100% 100%;
+}
+
+.nav-item:hover a{
+     color:var(--hoverLink);
+     background-size: 100% 100%;
+}
+/*End NavBar Section*/
+main{
+     grid-area:mainContent;
+     display: flex;
+     flex-direction: column;
+     min-height: 85vh;
+}
+.menuAdmin{
+     float: right;
+     width: 50%;
+}
+footer{
+     grid-area:footer;
+     border-top:2px solid #555; 
+     display: flex;
+     justify-content: space-between;
+}
+.footerLink{
+     list-style: none;
+     display: flex;
+}
+.footerLink li a{
+     color:#FFF;
+     text-decoration: none;
+     transition: .7s;
+}
+.footerLink li a:hover{
+     color:#009
+}
+.footerLink li::after{
+     content:" | "
+}
+
+/*Interface de connexion*/
+#connexion_frm{
+     width: 52%;
+     display: flex;
+     align-self: center;
+     background: var(--bgColor);
+     padding: 10px;
+     border-radius: 20px;
+     color: #FFF;
+     flex-direction: row;
+     align-content: space-around;
+}
+.userInfo{
+     display: flex;
+     align-items: center;
+     width: 25%;
+     align-content: space-around;
+}
+.modal_overlay{
+     position: fixed;
+     height: 100vh;
+     width: 100vw;
+     background: #5553;
+     top: 0;
+}
+.modal_overlay>div{
+     display: flex;
+     position: absolute;
+     min-width: 150px;
+     aspect-ratio: 16/9;
+     background-color: #FFF;
+     box-shadow: 5px 5px 8px #000;
+     border-radius: 3px;
+     top: 25%;
+     left: 25%;
+     flex-direction: column;
+     padding: 15px;
+
+}
+.avatar {
+     width: 35px;
+     margin-right: 10px;
+   }
+.btn-yellow{
+     background:linear-gradient(#FF0,#FF9);
+}
+.userInfo a{
+     display: block;
+     color: #FFF;
+     width: 45%;
+     position: relative;
+     background: linear-gradient(to top, #F006 0%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+     transition: background-size .7s, color .5s;
+}
+.userInfo span{
+     width: 25%;
+}
+.userInfo .avatar{
+     width: 40px;
+}
+.userInfo [name=accountAccess]{
+     width: 45px;
+}
+.userInfo a:hover {
+     background-size: 100% 100%;
+     color:#FF0;
+     text-shadow: 1px 1px 10px #FFF;
+   }
+#connexion_frm input{
+     align-self: center;
+}
+[name=connexion_trig]{
+     float: right;
+}
+.connexion{
+     margin-right: 5px;
+}
+/*Fin Interface de connexion*/

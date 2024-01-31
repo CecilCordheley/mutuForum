@@ -1,0 +1,53 @@
+<?php
+ class [%className%]{
+    private $attr=[[%attr%]];
+    public function __set($name,$value){
+      if (array_key_exists($name, $this->attr)) {
+         $this->attr[$name]=$value;
+     } else {
+         throw new Exception("Propriété non définie : $name");
+     }
+    }
+    public function getArray(){
+      return $this->attr;
+    }
+    public function __get($name){
+      if (array_key_exists($name, $this->attr)) {
+         return $this->attr[$name];
+     } else {
+         throw new Exception("Propriété non définie : $name");
+     }
+    }
+    public static function  add(SQLFactoryV2 $sqlF,[%className%] $item){
+      $sqlF->addItem($item->getArray(),"[%table%]");
+    }
+    public static function  update(SQLFactoryV2 $sqlF,[%className%] $item){
+      $sqlF->updateItem($item->getArray(),"[%table%]");
+    }
+    public static function  del(SQLFactoryV2 $sqlF,[%className%] $item){
+      $sqlF->deleteItem($item->getArray(),"[%table%]");
+    }
+    public static function getAll($sqlF){
+      $query=$sqlF->execQuery("SELECT * FROM [%table%]");
+      $return=[];
+      foreach($query as $element){
+      $entity=new [%className%]();
+         [%affect%]
+      $return[]=$entity;
+      }
+     return (count($return)>1)?$return:$return[0];
+    }
+    public static function get[%className%]By($sqlF,$key,$value){
+      $query=$sqlF->execQuery("SELECT * FROM [%table%] WHERE $key=$value");
+      $return=[];
+      foreach($query as $element){
+      $entity=new [%className%]();
+         [%affect%]
+      $return[]=$entity;
+      }
+      if(count($return))
+      return (count($return) > 1) ? $return : $return[0];
+    else
+      return false;
+    }
+ }

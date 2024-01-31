@@ -1,0 +1,13 @@
+.header{
+    background:#33E;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    color: #FFF;
+    text-align: center;
+}
+form{
+    margin: 65px;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+}

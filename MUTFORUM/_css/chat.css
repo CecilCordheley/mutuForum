@@ -1,0 +1,12 @@
+/**Ici le contenu CSS de la page chat*/
+#currentChat{
+    height: 450px;
+}
+[name=message]{
+    width: 100%;
+}
+#contentStream{
+    border: 1px solid #333;
+    margin: 5px;
+    padding: 3px;
+}

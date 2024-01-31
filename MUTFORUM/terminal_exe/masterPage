@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+    <head>
+        <title>[TITLE]</title>
+        [MAINCSS]
+        [MAINJS]
+    </head>
+    <body>
+           {var:mainContent}
+    </body>
+</html>

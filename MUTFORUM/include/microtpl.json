@@ -1,0 +1,33 @@
+{
+    "postMessage":[
+        "<div class=\"col-3 rows\">",
+    "<form onsubmit=\"return checkMessage()\" name=\"postMessage\" class=\"row g-3\" method=\"POST\" action=\"{var:url}?act=POST\">",
+        "<div >",
+            "<label for=\"messageInput\" class=\"form-label\">Message : </label>",
+            "<textarea maxlength=\"255\" class=\"form-control\" id=\"messageInput\" name=\"message\" rows=\"3\"></textarea>",
+        "</div>",
+        "<div>",
+            "<button type=\"submit\" class=\"btn btn-primary mb-3\">Poster</button>",
+        "</div>",
+       " <span id=\"lengthMessage\">0/255</span>",
+    "</form>",
+"</div>"
+    ],
+    "adminMenu":[
+        "<ul class=\"nav nav-tabs menuAdmin\">",
+       "<li class=\"nav-item\">",
+             "<a class=\"nav-link active`\" aria-current=\"page\" href=\"{:racine}ADMIN_message.php\">ADMIN MESSAGES</a>",
+        "</li>",
+        "<li class=\"nav-item\">",
+             "<a class=\"nav-link active`\" aria-current=\"page\" href=\"{:racine}ADMIN_user.php\">ADMIN UTILSIATEURS</a>",
+        "</li>",
+        "{:IF {var:user.TYPE_UTILISATEUR}=3}<li class=\"nav-item\">",
+             "<a class=\"nav-link active`\" aria-current=\"page\" href=\"{:racine}ADMIN_mutuelle.php\">ADMIN MUTUELLES</a>",
+        "</li>{:/IF}",
+        "</ul>"
+    ],
+    "alert":"<div class=\"alert alert-dismissible alert-primary\" role=\"alert\">{var:contentAlert}<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>",
+    "userInterface":["<img src=\"{:racine}img/AVATAR/{var:user.AVATAR_USER}\" class=\"img-fluid avatar\" alt=\"{var:PSEUDO_USER}\"><span>{var:PSEUDO_USER}</span><a name='accountAccess' href='account_update'><i class=\"fa-solid fa-user\"></i></a>",
+    "<a class=\"deconnexion\" href=\"{:racine}index.php?act=deconnexion\">déconnexion</a>"],
+    "connexion":"<a class='sign-in' href=\"{:racine}account/login\">Login</a><a class='sign-up' href=\"{:racine}account_new\">Sign Up</a>"
+}

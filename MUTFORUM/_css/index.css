@@ -1,0 +1,21 @@
+main{
+    height: 80vh;
+}
+.table tbody tr td,.table thead th{
+    background: none;
+}
+.topic-link{
+    color: #FFF;
+    text-decoration: none;
+}
+.topic-link:hover{
+    color: #558;
+}
+.card-logo{
+    width: 45px;
+    float: left;
+}
+.card{
+    background: #000;
+    color: #FFF;
+}
